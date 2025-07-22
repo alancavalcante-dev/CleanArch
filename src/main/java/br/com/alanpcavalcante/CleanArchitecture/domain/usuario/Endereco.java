@@ -8,6 +8,10 @@ public class Endereco {
     private String numero;
 
     public Endereco(String rua, String cidade, String estado, String numero) {
+        caracteresMinimos(rua);
+        caracteresMinimos(cidade);
+        caracteresMinimos(estado);
+        caracteresMinimos(numero);
         this.rua = rua;
         this.cidade = cidade;
         this.estado = estado;

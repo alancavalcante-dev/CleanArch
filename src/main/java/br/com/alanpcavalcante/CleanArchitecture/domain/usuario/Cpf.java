@@ -5,6 +5,8 @@ public class Cpf {
     String cpf;
 
     public Cpf(String cpf) {
+        validarExpressaoCpf(cpf);
+        validarCpf(cpf);
         this.cpf = cpf;
     }
 
@@ -12,10 +14,11 @@ public class Cpf {
         return cpf;
     }
 
-    public void setCpf(String cpf) {
-        validarExpressaoCpf(cpf);
-        validarCpf(cpf);
-        this.cpf = cpf;
+
+    private void validarExpressaoCpf(String cpf) {
+        if (!cpf.matches("^\\d{3}\\.\\d{3}\\.\\d{3}-\\d{2}$")) {
+            throw new IllegalArgumentException("Formato do cpf incorreto, valor esperado: xxx.xxx.xxx-xx");
+        }
     }
 
     private void validarCpf(String cpf) {
@@ -50,9 +53,5 @@ public class Cpf {
         }
     }
 
-    private void validarExpressaoCpf(String cpf) {
-        if (!cpf.matches("^\\d{3}\\.\\d{3}\\.\\d{3}-\\d{2}$\n")) {
-            throw new IllegalArgumentException("Formato do cpf incorreto, valor esperado: xxx.xxx.xxx-xx");
-        }
-    }
+
 }

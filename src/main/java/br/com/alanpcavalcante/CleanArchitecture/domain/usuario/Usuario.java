@@ -8,19 +8,14 @@ public class Usuario {
     private Cpf cpf;
     private Email email;
     private Telefone telefone;
+
     private Endereco endereco;
+
     private Login login;
     private Password password;
 
-    public Usuario(Nome nome, Cpf cpf, Email email, Telefone telefone, Endereco endereco, Login login, Password password) {
-        this.nome = nome;
-        this.cpf = cpf;
-        this.email = email;
-        this.telefone = telefone;
-        this.endereco = endereco;
-        this.login = login;
-        this.password = password;
-    }
+    protected Usuario(){}
+
 
     public Nome getNome() {
         return nome;
